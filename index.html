@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="index.css">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/mathjs/1.6.0/math.min.js"></script>
+	<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script>
+	<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<title>Calculator</title>
+</head>
+<body>
+	<div>
+	<h5 align="left">Calculator!</h5>
+	<div id="calcbody">
+		<form name="form" align="center">
+			<input name="result">
+			<p>
+				<button class="numbu" type="button" onclick="lpr()">$($</button>
+				<button class="numbu" type="button" onclick="arcsin()">$\sin^{-1}$</button>
+				<button class="numbu" type="button" onclick="arccos()">$\cos^{-1}$</button>
+				<button class="numbu" type="button" onclick="arctan()">$\tan^{-1}$</button>
+				<button class="numbu" type="button" onclick="rpr()">$)$</button>
+				<br> 
+				<button class="numbu" type="button" onclick="exp()">^</button>
+				<button class="numbu" type="button" onclick="sin()">$\sin$</button>
+				<button class="numbu" type="button" onclick="cos()">$\cos$</button>
+				<button class="numbu" type="button" onclick="tan()">$\tan$</button>
+				<button class="numbu" type="button" onclick="div()">$\div$</button>
+				<br> 
+				<button class="numbu" type="button" onclick="sqrt()">$\sqrt{x}$</button>
+				<button class="numbu" type="button" onclick="run(7)">$7$</button>
+				<button class="numbu" type="button" onclick="run(8)">$8$</button>
+				<button class="numbu" type="button" onclick="run(9)">$9$</button>
+				<button class="numbu" type="button" onclick="mul()">$\times$</button>
+				<br> 
+				<button class="numbu" type="button" onclick="log()">$\log$</button>
+				<button class="numbu" type="button" onclick="run(4)">$4$</button>
+				<button class="numbu" type="button" onclick="run(5)">$5$</button>
+				<button class="numbu" type="button" onclick="run(6)">$6$</button>
+				<button class="numbu" type="button" onclick="sub()">$-$</button>
+				<br> 
+				<button class="numbu" type="button" onclick="ln()">$\ln$</button>
+				<button class="numbu" type="button" onclick="run(1)">$1$</button>
+				<button class="numbu" type="button" onclick="run(2)">$2$</button>
+				<button class="numbu" type="button" onclick="run(3)">$3$</button>
+				<button class="numbu" type="button" onclick="add()">$+$</button>
+				<br> 
+				<button class="numbu" type="reset" value="Reset">C</button>
+				<button class="numbu" type="button" onclick="run(0)">$0$</button>
+				<button class="numbu" type="button" onclick="dot()">$.$</button>
+				<button class="numbu" type="button" onclick="inv()">$(-)$</button>
+				<button class="numbu" type="button" onclick="eva()">$=$</button>
+			</p> 
+			<script type="text/javascript">
+				function run(num) {document.form.result.value += num;}
+				function eva() {document.form.result.value = math.format(math.eval(document.form.result.value),10);}
+				function mul() {document.form.result.value += "*";}
+				function div() {document.form.result.value += "/";}
+				function sub() {document.form.result.value += "-";}
+				function add() {document.form.result.value += "+";}
+				function exp() {document.form.result.value += "^";}
+				function lpr() {document.form.result.value += "(";}
+				function rpr() {document.form.result.value += ")";}
+				function inv() {document.form.result.value = -1*(document.form.result.value);}
+				function log() {
+					var a = parseFloat(document.form.result.value);
+					document.form.result.value = math.format(math.log10(a),10);
+				}
+				function ln() {
+					var a = parseFloat(document.form.result.value);
+					document.form.result.value = math.format(math.log(a),10);
+				}
+				function cos() {
+					var a = parseFloat(document.form.result.value);
+					document.form.result.value = math.format(math.cos(a),10);
+				}
+				function sin() {
+					var a = parseFloat(document.form.result.value);
+					document.form.result.value = math.format(math.sin(a),10);
+				}
+				function tan() {
+					var a = parseFloat(document.form.result.value);
+					document.form.result.value = math.format(math.tan(a),10);
+				}
+				function sqrt() {
+					var a = parseFloat(document.form.result.value);
+					document.form.result.value = math.format(math.sqrt(a),10);
+				}
+
+				function arccos() {
+					var a = parseFloat(document.form.result.value);
+					document.form.result.value = math.format(math.acos(a),10);
+				}
+				function arcsin() {
+					var a = parseFloat(document.form.result.value);
+					document.form.result.value = math.format(math.asin(a),10);
+				}
+				function arctan() {
+					var a = parseFloat(document.form.result.value);
+					document.form.result.value = math.format(math.atan(a),10);
+				}
+			</script>
+		</form>
+	</div>
+	<!--<br>
+	<br>
+	<br>
+	<div class='rabbit'></div>
+	<div class='clouds'></div>
+	<br>
+	<br>
+	<br>-->
+	<div class='calcbody'>
+		<h5 align="left">Project Notebook</h5>
+		<ul>
+			<li>5-22-15</li>
+			<ul>
+				<li>Started Project</li>
+				<li>Formatted HTML and CSS bodies and layout</li>
+			</ul>
+			<li>5-25-15</li>
+			<ul>
+				<li>Added buttons, with no functionality</li>
+				<li>Added result field, with no functionality</li>
+			</ul>
+			<li>5-26-15</li>
+			<ul>
+				<li>Added functionality to buttons and result field via Javascript</li>
+				<li><b>SIMPLE CALCULATOR FINISHED</b></li>
+				<li>CSS rabbit to celebrate</li>
+			</ul>
+			<li>5-28-15</li>
+			<ul>
+				<li>Researched further ideas for calculator</li>
+				<li>Learned about Javascript libraries</li>
+				<li>Loaded and instantiated math.js</li>
+			</ul>
+			<li>5-29-15</li>
+			<ul>
+				<li>Implemented new buttons, sin, cos, etc.</li>
+				<li>Wrote JS functionality for buttons</li>
+				<li><b>MEDIOCRE CALCULATOR FINISHED</b></li>
+			</ul>
+			<li>6-1-15</li>
+			<ul>
+				<li>Loaded and instantiated MathJax</li>
+				<li>Correctly typesetted $\log, \sqrt{x}, \sin^{-1}$, etc.</li>
+				<li>Removed CSS rabbit because it needed to go home</li>
+				<li>Rounded the corners of the calculator</li>
+				<li>Added Project Log.</li>
+			</ul>
+			
+		</ul>
+	</div>
+	</div>
+</body>
+</html>
